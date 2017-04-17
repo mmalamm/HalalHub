@@ -13,7 +13,7 @@ The PostgreSQL database of HalalHub consists of four tables: users, trucks, revi
 
 ### Index / Home Page
 
-The HalalHub homepage consists of a map functional component and a truck list containers which renders a list of truck list items (halal trucks). Just about every page contains the searchbar/login component at the top of the page.
+The HalalHub homepage consists of a map functional component and a truck list container which renders a list of truck list items (halal trucks). Just about every page contains the searchbar/login component at the top of the page.
 
 ![Index/Homepage](/docs/wireframes/index-home-page.png)
 
