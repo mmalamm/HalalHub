@@ -6,7 +6,7 @@ Today, the Halal Truck in New York city is as iconic as the Hot Dog Stand was in
 
 ## Features & Implementation
 
-The PostgreSQL database of HalalHub consists of four tables: users, trucks, reviews, and menu_items. Users are indexed by unique usernames, and have columns for email, password digest, session token and zip code, for easier access to nearby halal trucks.
+The PostgreSQL database of HalalHub consists of five tables: users, trucks, reviews, images and menu_items. Users are indexed by unique usernames, and have columns for email, password digest, session token and zip code, for easier access to nearby halal trucks.
 
 ![Sign In Page](/docs/wireframes/sign-in-page.png)
 ![Sign Up Page](/docs/wireframes/sign-up-page.png)
