@@ -34,3 +34,11 @@ id          | integer   | not null, primary key
 name        | string    | not null
 price       | integer   | not null
 truck_id    | integer   | not null, foreign key (references trucks), indexed
+
+## images
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+image_url   | string    | not null
+truck_id    | integer   | not null, foreign key (references trucks), indexed
