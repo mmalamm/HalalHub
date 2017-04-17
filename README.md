@@ -11,6 +11,12 @@ The PostgreSQL database of HalalHub consists of four tables: users, trucks, revi
 ![Sign In Page](/docs/wireframes/sign-in-page.png)
 ![Sign Up Page](/docs/wireframes/sign-up-page.png)
 
+### Index / Home Page
+
+The HalalHub homepage consists of a map functional component and a truck list containers which renders a list of truck list items (halal trucks). Just about every page contains the searchbar/login component at the top of the page.
+
+![Index/Homepage](/docs/wireframes/index-home-page.png)
+
 ### Truck Show Page Rendering
 
 Trucks are stored in a table with columns for name, address, and a text area for any additional information. The truck show page consists of a container with props being passed down for the truck information component, the images component, reviews component, and operating hours component.
@@ -28,13 +34,6 @@ Reviews are added by users via a review form container on the review form page. 
 Since most halal trucks tend to have the same menu items, it would be necessary to store menu_items in their own join table, so as not to repeat 'Chicken over Rice' on virtually every truck. Menu Items also have a price column on their table. Menu Items are added on the same page as the trucks they belong to. The add truck page consists of two form containers: one to add the truck, and the other to add the truck's menu items.
 
 ![Add Truck Page](/docs/wireframes/add-truck-page.png)
-
-
-### Index / Home Page
-
-The HalalHub homepage consists of a map functional component and a truck list containers which renders a list of truck list items (halal trucks). Just about every page contains the searchbar/login component at the top of the page.
-
-![Index/Homepage](/docs/wireframes/index-home-page.png)
 
 ## Future Directions for the Project
 
