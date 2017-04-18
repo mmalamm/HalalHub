@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/
+[trello]: https://trello.com/b/alWudje4/halalhub-schedule
 
 ## Minimum Viable Product
 
