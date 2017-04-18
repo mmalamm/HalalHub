@@ -46,18 +46,18 @@ bugs and unnecessary inefficiencies, adequate seed data and CSS styling:
 **Objective:** Trucks can be created, read, edited and destroyed through
 the API. Images can be added to truck pages by users.
 
-### Phase 3: Reviews and Ratings (2 days)
+### Phase 3: Add search and filters
+
+**Objective:** Allow users to search and filter by critera TBD.
+
+### Phase 4: Reviews and Ratings (2 days)
 
 **Objective:** Reviews can be created, read, edited and destroyed through the API.
 Ratings can be added by users and will update the truck's overall rating
 
-### Phase 4: Map Functionalities (1 day)
+### Phase 5: Map Functionalities (1 day)
 
 **Objective:** Add google maps functionality to truck show page and index page.
-
-### Phase 5: Add search and filters
-
-**Objective:** Allow users to search and filter by critera TBD.
 
 ### Bonus Features (TBD)
 - [ ] Mark reviews funny, cool, useful etc.
