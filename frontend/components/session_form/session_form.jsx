@@ -5,6 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: '', password: '' };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   headingText() {
@@ -15,10 +16,24 @@ class SessionForm extends React.Component {
     }
   }
 
+  buttonText() {
+    if (this.props.formType === 'login') {
+      return 'Log In';
+    } else {
+      return 'Sign Up';
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.redirect());
+    const user = this.state;
+    this.props.processForm(user);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   render() {
@@ -27,6 +42,23 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           {this.headingText()}HalalHub
           <br/>
+          <label> User Name:
+            <br/>
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}/>
+          </label>
+          <br/>
+          <label> Password:
+            <br/>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}/>
+          </label>
+          <br/>
+          <input type="submit" value={this.buttonText()} />
         </form>
       </div>
     );
