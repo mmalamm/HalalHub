@@ -21,6 +21,14 @@ input {
   margin: 5px;
 }
 
+.formbox > * > * {
+  margin: 5px 0px;
+}
+
+.formbox > * > * > * {
+  margin: 10px 0px;
+}
+
 .errors {
   border: 1px solid white;
   margin: 5px 0px;
@@ -29,7 +37,8 @@ input {
 }
 
 .formbox h3 {
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 20px;
   text-align: center;
   color: #A8191A;
   padding-bottom: 10px;
@@ -87,6 +96,7 @@ button, input[type="submit"] {
 }
 
 .session-form nav {
+  font-size: 12px;
   padding-top: 5px;
   border-top: 1px solid white;
 }
