@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   def self.find_by_creds(username, pw)
     @user = User.find_by(username: username)
+    return nil unless @user
     @user.valid_pass?(pw) ? @user : nil
   end
 

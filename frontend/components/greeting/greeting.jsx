@@ -9,15 +9,21 @@ const sessionLinks = () => (
   </nav>
 );
 
-const personalGreeting = (currentUser, logout) => (
-  <hgroup>
-    <h2>Welcome to HalalHub, {currentUser.username}!</h2>
-    <button onClick={logout}>Log Out</button>
-  </hgroup>
-);
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+const personalGreeting = (currentUser, logout, router) => {
+  const handleLogout = () => {
+    logout().then(
+      () => router.push('/login')
+    )
+  };
+  return(<hgroup>
+    <h2>Welcome to HalalHub, {currentUser.username}!</h2>
+    <button onClick={handleLogout}>Log Out</button>
+  </hgroup>)
+};
+
+const Greeting = ({ currentUser, logout, router }) => (
+  currentUser ? personalGreeting(currentUser, logout, router) : sessionLinks()
 );
 
 export default Greeting;
