@@ -1,0 +1,92 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.formbox form {
+  font-size: 15px;
+  padding: 12px;
+  background-color: #CE1F20;
+  // border-radius: 10px;
+  height: auto;
+  color: white;
+}
+
+input {
+  margin: 5px 0px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+.formbox > * {
+  margin: 5px;
+}
+
+.errors {
+  border: 1px solid white;
+  margin: 5px 0px;
+  padding: 10px 5px;
+  font-weight: bold;
+}
+
+.formbox h3 {
+  font-weight: bold;
+  text-align: center;
+  color: #A8191A;
+  padding-bottom: 10px;
+}
+
+label {
+  padding: 10px 0px;
+}
+
+button, input[type="submit"] {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #A8191A;
+    width: 75px;
+}
+
+//////////////////
+.form-title {
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+//////////////////
+.session-form {
+  align-items: center;
+  justify-content: center;
+  // max-width: 800px;
+  display: flex;
+  // justify-content: space-between;
+}
+
+// .session-form .img-container {
+//   width: 80%;
+//   height: auto;
+//   padding: 20px;
+// }
+
+.truckpic {
+  background-color: transparent;
+  margin: 20px;
+  padding: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  padding-right: 40px;
+}
+
+.session-form form {
+  background: #CE1F20;
+}
+
+.session-form nav {
+  padding-top: 5px;
+  border-top: 1px solid white;
+}

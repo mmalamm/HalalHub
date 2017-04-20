@@ -46,27 +46,27 @@ class SessionForm extends React.Component {
   }
 
   switchFormsPart() {
+    let switchFormText;
+    let switchFormUrl;
+    let switchFormBtn;
     if (this.props.formType === 'login') {
-      return(
-        <div>
-          <p>New User</p>
-          <button
-            onClick={ () => this.props.router.push('/signup') }>
-            Sign Up
-          </button>
-        </div>
-      );
+      switchFormText = 'New User';
+      switchFormUrl = '/signup';
+      switchFormBtn = 'Sign Up';
     } else {
-      return(
-        <div>
-          <p>Already Registered?</p>
-          <button
-            onClick={ () => this.props.router.push('/login') }>
-            Log In
-          </button>
-        </div>
-      );
+      switchFormText = 'Already Registered?';
+      switchFormUrl = '/login';
+      switchFormBtn = 'Log In';
     }
+    return(
+      <nav className='form-nav'>
+        <p>{switchFormText}</p>
+        <button
+          onClick={ (e) => {e.preventDefault();this.props.router.push(switchFormUrl);} }>
+          {switchFormBtn}
+        </button>
+      </nav>
+    );
   }
 
   handleSubmit(e) {
@@ -82,15 +82,18 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    let errors = this.props.errors;
+    if (errors.length){
+      return(
+        <ul className="errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   addNewUserFields() {
@@ -120,37 +123,42 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='session-form'>
+        <div className="formbox">
         <h3>{this.headingText()}HalalHub</h3>
-        <form onSubmit={this.handleSubmit}>
-          {this.formTitle()}
-          {this.renderErrors()}
-          <label> User Name:
+          <form onSubmit={this.handleSubmit}>
+            <div className='form-title'>
+              {this.formTitle()}
+            </div>
+            <div>
+              {this.renderErrors()}
+            </div>
+            <label> User Name:
+              <br/>
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}/>
+            </label>
             <br/>
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}/>
-          </label>
-          <br/>
-          <label> Password:
+            <label> Password:
+              <br/>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}/>
+            </label>
+            {
+              this.addNewUserFields()
+            }
             <br/>
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}/>
-          </label>
-          {
-            this.addNewUserFields()
-          }
-          <br/>
-          <input type="submit" value={this.buttonText()} />
-        </form>
-        <p>-------------------------</p>
-        {
-          this.switchFormsPart()
-        }
-        <img src={window.halal_truck_pic} />
+            <input type="submit" value={this.buttonText()} />
+            { this.switchFormsPart() }
+          </form>
+        </div>
+        <div className='img-container'>
+          <img className="truckpic" src={window.halal_truck_pic} />
+        </div>
       </div>
     );
   }

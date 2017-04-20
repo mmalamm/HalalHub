@@ -3,13 +3,13 @@ import { Link } from 'react-router';
 import GreetingContainer from './greeting/greeting_container';
 
 const App = ({children}) => (
-  <div>
+  <div id="main">
     <header>
       <Link to="/">
         <img src={window.halalhubLogo} />
       </Link>
-      {children}
     </header>
+    {children}
   </div>
 );
 
