@@ -62,6 +62,7 @@ class SessionForm extends React.Component {
       <nav className='form-nav'>
         <p>{switchFormText}</p>
         <button
+          className="switch-btn"
           onClick={ (e) => {e.preventDefault();this.props.router.push(switchFormUrl);} }>
           {switchFormBtn}
         </button>

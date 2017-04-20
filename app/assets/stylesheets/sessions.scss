@@ -22,11 +22,13 @@ input {
 }
 
 .formbox > * > * {
-  margin: 5px 0px;
+  margin-top: 5px;
+  font-size: 12px;
 }
 
 .formbox > * > * > * {
-  margin: 10px 0px;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 .errors {
@@ -48,21 +50,10 @@ label {
   padding: 10px 0px;
 }
 
-button, input[type="submit"] {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border: none;
-    margin: 5px 0px;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #A8191A;
-    width: 75px;
-}
 
 //////////////////
 .form-title {
+  font-size: 12px;
   border-bottom: 1px solid white;
   margin-bottom: 5px;
   padding-bottom: 5px;
@@ -99,4 +90,21 @@ button, input[type="submit"] {
   font-size: 12px;
   padding-top: 5px;
   border-top: 1px solid white;
+}
+
+.switch-btn {
+  font-size: 15px;
+}
+
+button, input[type="submit"] {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin: 5px 0px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #A8191A;
+  width: 75px;
 }
