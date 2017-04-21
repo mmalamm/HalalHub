@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  border: 1px solid #F5F5F5;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0px 10px;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.navbar img {
+  height: 50px;
+  padding: 0px;
+  margin: 2px -130px -1px 0px;
+}
+
+.navbar-right {
+  display: flex;
+}
+.navbar-left {
+  align-items: center;
+  display: flex;
+}
+
+.navimg {
+  margin: 0px
+}
+
+.navbar h2 {
+  margin: 10px 5px;
+  padding: 5px;
+}
+
+.navbar-right > button {
+  width: 75px;
+  height: 20px;
+  margin: 10px 5px;
+}
+
+.navbar-left input {
+  margin: 0px 10px;
+  height: 20px;
+  background-color: white;
+}
