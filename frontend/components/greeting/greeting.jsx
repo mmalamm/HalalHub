@@ -17,8 +17,11 @@ const personalGreeting = (currentUser, logout, router) => {
     )
   };
   return(<hgroup>
-    <h2>Welcome to HalalHub, {currentUser.username}!</h2>
-    <button onClick={handleLogout}>Log Out</button>
+    <img src={window.halalhubLogo} />
+    <div className="navbar">
+      <h2>Welcome to HalalHub, {currentUser.username}!</h2>
+      <button onClick={handleLogout}>Log Out</button>
+    </div>
   </hgroup>)
 };
 
