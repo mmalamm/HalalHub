@@ -37,7 +37,10 @@ const navbarLeft = () => (
       <img src={window.halalhubsvg} />
     </Link>
     <form>
-      <input type="search" value="example"/>
+      <input type="search" defaultValue="Search"/>
+      <button>
+        <i className="fa fa-search" aria-hidden="true"></i>
+      </button>
     </form>
   </div>
 )

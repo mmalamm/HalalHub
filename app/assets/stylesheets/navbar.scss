@@ -39,7 +39,19 @@
 }
 
 .navbar-left input {
+  padding: 1px;
   margin: 0px 10px;
-  height: 20px;
+  margin-right: 0px;
+  height: 25px;
   background-color: white;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+.navbar-left button {
+  margin-left: 0px;
+  width: auto;
+  height: auto;
+  background-color: #999999;
+  border-radius: none;
 }
