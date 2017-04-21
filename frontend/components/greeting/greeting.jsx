@@ -17,8 +17,8 @@ const personalGreeting = (currentUser, logout, router) => {
     )
   };
   return(<hgroup>
-    <img src={window.halalhubLogo} />
     <div className="navbar">
+      <img src={window.halalhubsvg} />
       <h2>Welcome to HalalHub, {currentUser.username}!</h2>
       <button onClick={handleLogout}>Log Out</button>
     </div>
