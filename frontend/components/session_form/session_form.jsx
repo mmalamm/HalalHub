@@ -58,12 +58,18 @@ class SessionForm extends React.Component {
       switchFormUrl = '/login';
       switchFormBtn = 'Log In';
     }
+
     return(
       <nav className='form-nav'>
         <p>{switchFormText}</p>
         <button
           className="switch-btn"
-          onClick={ (e) => {e.preventDefault();this.props.router.push(switchFormUrl);} }>
+          onClick={
+            (e) => {
+              e.preventDefault();this.props.router.push(switchFormUrl);
+              this.setState({username: '', password: ''});
+            }
+          }>
           {switchFormBtn}
         </button>
       </nav>
@@ -112,7 +118,7 @@ class SessionForm extends React.Component {
         <label> Zip Code:
           <br/>
           <input
-            type="password"
+            type="text"
             value={this.state.zip_code}
             onChange={this.update("zip_code")}/>
         </label>
