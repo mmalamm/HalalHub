@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import NavbarContainer from './navbar/navbar_container';
+import TruckFormContainer from './truck_form/truck_form_container';
 
 
 const Root = ({ store }) => {
@@ -30,6 +31,7 @@ const Root = ({ store }) => {
           <IndexRoute component={NavbarContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="/addtruck" component={TruckFormContainer} onEnter={_redirectIfNotLoggedIn} />
         </Route>
       </Router>
     </Provider>

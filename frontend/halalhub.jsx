@@ -6,10 +6,16 @@ import configureStore from './store/store';
 
 ////////////////////////////////////////////////////////
 import { logout, login, signup } from './util/session_api_util';
+import { fetchTrucks, fetchTruck } from './util/trucks_api_util';
 
+///// session api tests
 window.signup = signup;
 window.login = login;
 window.logout = logout;
+
+///// truck api tests
+window.getTrucks = fetchTrucks;
+window.getTruck = fetchTruck;
 ///////////////////////////////////////////////////////
 
 

@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420234416) do
+ActiveRecord::Schema.define(version: 20170424153320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "rating_num", null: false
+    t.integer  "truck_id",   null: false
+    t.integer  "user_id",    null: false
+    t.integer  "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "body",       null: false
+    t.integer  "user_id",    null: false
+    t.integer  "truck_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trucks", force: :cascade do |t|
+    t.string   "name",           null: false
+    t.string   "street_address", null: false
+    t.integer  "zip_code",       null: false
+    t.string   "city",           null: false
+    t.string   "phone"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["city"], name: "index_trucks_on_city", using: :btree
+    t.index ["name"], name: "index_trucks_on_name", using: :btree
+    t.index ["street_address"], name: "index_trucks_on_street_address", using: :btree
+    t.index ["zip_code"], name: "index_trucks_on_zip_code", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",      null: false
