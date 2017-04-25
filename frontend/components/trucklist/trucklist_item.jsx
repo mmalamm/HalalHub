@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class TruckListItem extends React.Component {
   constructor(props) {
@@ -10,13 +11,16 @@ class TruckListItem extends React.Component {
     const { truck } = this.props;
     return(
       <li>
-        <div className="trucklist_item">
+        <Link to={`/trucks/${truck.id}`}>
+          <div
+          className="trucklist_item">
           {truck.name}
           <br />
           {truck.street_address}
           <br />
           {truck.city}, NY {truck.zip_code}
-        </div>
+          </div>
+        </Link>
       </li>
     );
   }

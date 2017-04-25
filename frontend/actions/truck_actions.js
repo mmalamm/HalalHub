@@ -3,6 +3,15 @@ import * as APIUtil from '../util/trucks_api_util';
 export const RECEIVE_TRUCKS = 'RECEIVE_TRUCKS';
 export const RECEIVE_TRUCK = 'RECEIVE_TRUCK';
 
+////////////
+// export const RECEIVE_TRUCK_ERRORS = 'RECEIVE_TRUCK_ERRORS';
+//
+// export const receiveTruckErrors = errors => ({
+//   type: RECEIVE_TRUCK_ERRORS,
+//   errors
+// })
+////////////
+
 export const receiveTrucks = trucks => ({
   type: RECEIVE_TRUCKS,
   trucks

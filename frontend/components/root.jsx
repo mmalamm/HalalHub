@@ -8,6 +8,7 @@ import NavbarContainer from './navbar/navbar_container';
 import TruckFormContainer from './truck_form/truck_form_container';
 import TruckListContainer from './trucklist/trucklist_container';
 import IndexPage from './pages/index_page';
+import TruckShowPageContainer from './pages/truck_show_page_container';
 
 
 const Root = ({ store }) => {
@@ -32,6 +33,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRoute component={IndexPage} />
           <Route path="/trucks" component={TruckListContainer} />
+          <Route path="/trucks/:id" component={TruckShowPageContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/addtruck" component={TruckFormContainer} onEnter={_redirectIfNotLoggedIn} />
