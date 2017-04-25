@@ -1,0 +1,72 @@
+.show-page-header {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+
+  margin: 5px auto;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+
+  height: auto;
+  width: calc(92vw);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-page-header h1 {
+  font-size: 32px;
+}
+
+.write-review-btn, .add-photo-btn {
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.write-review-btn {
+  font-size: 16px;
+  width: 150px;
+  height: 35px;
+}
+
+.add-photo-btn {
+  font-size: 12px;
+  background-color: #cccccc;
+  width: 100px;
+  height: 35px;
+}
+
+.show-page {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  // border: 20px solid blue;
+}
+
+.show-truck-content {
+  width: 92vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-truck-content > * {
+  border: 2px solid blue;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.show-truck-info {
+  width: 29vw;
+  background-color: #F5F5F5;
+  padding: 5px;
+
+
+  border: 2px solid green;
+
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../navbar/navbar_container';
-import TruckListItem from '../trucklist/trucklist_item';
 
 class TruckShowPage extends React.Component {
   constructor(props) {
@@ -16,20 +15,48 @@ class TruckShowPage extends React.Component {
 
     const truckOrSpinner = () => {
       if (truck) {
-        return (<TruckListItem truck={truck} />)
+        return (
+          <div className="show-truck-page">
+            <section className="show-page-header">
+              <h1>
+                {truck.name}
+              </h1>
+              <div>
+                <button className="write-review-btn">★ Write a Review</button>
+                <button className="add-photo-btn">Add Photo!</button>
+              </div>
+            </section>
+            <div className="show-truck-content">
+              <section className="show-truck-info">
+                <div>
+                  <strong>{truck.name}</strong> <br/>
+                  {truck.street_address} <br/>
+                  {truck.city}, NY {truck.zip_code}
+                </div>
+              </section>
+              <section className="show-truck-images">
+                <h2>images component will go here</h2>
+              </section>
+              <section className="show-truck-reviews">
+                <h2>reviews will go here</h2>
+              </section>
+              <section className="show-truck-hours">
+                <h2>hours component will go here</h2>
+              </section>
+            </div>
+          </div>
+        )
       } else {
         return (<div><h1>WAIT</h1></div>)
       }
     };
 
     return (
-      <div>
+      <div className="show-page">
         <header>
           <Navbar />
         </header>
-        <section>
-          { truckOrSpinner() }
-        </section>
+        { truckOrSpinner() }
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Navbar from '../navbar/navbar_container';
 
 class TruckForm extends React.Component {
   constructor(props) {
@@ -25,32 +26,15 @@ class TruckForm extends React.Component {
     this.props.createTruck(truck).then(() => this.props.router.push('/'));
   }
 
-  // renderErrors() {
-  //   debugger
-  //   let errors = this.props.errors;
-  //   if (errors.length){
-  //     return(
-  //       <ul className="errors">
-  //         {this.props.errors.map((error, i) => (
-  //           <li key={`error-${i}`}>
-  //             {error}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     );
-  //   }
-  // }
-
   render() {
     return(
-      <div className="main">
-        <div className="logo-decal">
-          <Link to="/">
-            <img src={window.halalhubsvg} />
-          </Link>
-        </div>
+      <div>
+        <header className="form-header">
+          <Navbar id="form-header"/>
+        </header>
         <form className="truck-form" onSubmit={ this.handleSubmit }>
           <label>Name:
+            <br />
             <input
               ref="name"
               value={ this.state.title }
@@ -58,7 +42,9 @@ class TruckForm extends React.Component {
               onChange={ this.update('name') }
               />
           </label>
+          <br />
           <label>Address:
+            <br />
             <input
               ref="street_address"
               value={ this.state.street_address }
@@ -66,7 +52,9 @@ class TruckForm extends React.Component {
               onChange={ this.update('street_address') }
               />
           </label>
+          <br />
           <label>City:
+            <br />
             <input
               ref="city"
               value={ this.state.city }
@@ -74,7 +62,9 @@ class TruckForm extends React.Component {
               onChange={ this.update('city') }
               />
           </label>
+          <br />
           <label>Zip Code:
+            <br />
             <input
               ref="zip_code"
               value={ this.state.zip_code }
@@ -82,7 +72,9 @@ class TruckForm extends React.Component {
               onChange={ this.update('zip_code') }
               />
           </label>
+          <br />
           <label>Phone:
+            <br />
             <input
               ref="phone"
               value={ this.state.phone || '' }
@@ -90,6 +82,17 @@ class TruckForm extends React.Component {
               onChange={ this.update('phone') }
               />
           </label>
+          <br />
+          <label>Picture:
+            <br />
+            <input
+              ref="profile_pic"
+
+              placeholder="Upload Profile Pic"
+              onChange={ this.update('profile_pic') }
+              />
+          </label>
+          <br />
           <input type="submit" value="Add Truck!"/>
         </form>
       </div>

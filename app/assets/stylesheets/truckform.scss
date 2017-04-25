@@ -1,3 +1,38 @@
 .truck-form {
-  display: inline-table;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+
+  margin: 5px auto;
+  padding: 15px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+
+  height: auto;
+  width: calc(92vw);
+}
+
+.truck-form input {
+  margin-bottom: 15px;
+  padding: 5px;
+  font-weight: normal;
+  width: calc(30vw);
+  border: 1px solid black;
+}
+
+.truck-form input[type="submit"] {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin: 5px 0px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #A8191A;
+  width: 100px;
+}
+
+.truck-form input[type="submit"]:active {
+  background-color: #660000;
 }
