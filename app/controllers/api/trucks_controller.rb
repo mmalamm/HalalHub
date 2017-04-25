@@ -8,7 +8,6 @@ class Api::TrucksController < ApplicationController
   end
 
   def create
-    debugger
     @truck = Truck.new(truck_params)
 
     if @truck.save
@@ -37,6 +36,7 @@ class Api::TrucksController < ApplicationController
   private
 
   def truck_params
-    params.require(:truck).permit(:name, :street_address, :zip_code, :city, :phone)
+    params.require(:truck)
+          .permit(:name, :street_address, :zip_code, :city, :phone)
   end
 end
