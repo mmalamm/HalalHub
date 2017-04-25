@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424153320) do
+ActiveRecord::Schema.define(version: 20170425214742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,17 @@ ActiveRecord::Schema.define(version: 20170424153320) do
   end
 
   create_table "trucks", force: :cascade do |t|
-    t.string   "name",           null: false
-    t.string   "street_address", null: false
-    t.integer  "zip_code",       null: false
-    t.string   "city",           null: false
+    t.string   "name",                     null: false
+    t.string   "street_address",           null: false
+    t.integer  "zip_code",                 null: false
+    t.string   "city",                     null: false
     t.string   "phone"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
     t.index ["city"], name: "index_trucks_on_city", using: :btree
     t.index ["name"], name: "index_trucks_on_name", using: :btree
     t.index ["street_address"], name: "index_trucks_on_street_address", using: :btree

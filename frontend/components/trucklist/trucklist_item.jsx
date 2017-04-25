@@ -19,6 +19,8 @@ class TruckListItem extends React.Component {
           {truck.street_address}
           <br />
           {truck.city}, NY {truck.zip_code}
+          <br />
+          <img src={truck.image_url} />
           </div>
         </Link>
       </li>
