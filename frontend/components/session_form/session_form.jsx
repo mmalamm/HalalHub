@@ -130,41 +130,48 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className='session-form'>
-        <div className="formbox">
-        <h3>{this.headingText()}HalalHub</h3>
-          <form onSubmit={this.handleSubmit}>
-            <div className='form-title'>
-              {this.formTitle()}
-            </div>
-            <div>
-              {this.renderErrors()}
-            </div>
-            <label> User Name:
-              <br/>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}/>
-            </label>
-            <br/>
-            <label> Password:
-              <br/>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}/>
-            </label>
-            {
-              this.addNewUserFields()
-            }
-            <br/>
-            <input type="submit" value={this.buttonText()} />
-            { this.switchFormsPart() }
-          </form>
+      <div className="main">
+        <div className="logo-decal">
+          <Link to="/">
+            <img src={window.halalhubsvg} />
+          </Link>
         </div>
-        <div className='img-container'>
-          <img className="truckpic" src={window.halal_truck_pic} />
+        <div className='session-form'>
+          <div className="formbox">
+          <h3>{this.headingText()}HalalHub</h3>
+            <form onSubmit={this.handleSubmit}>
+              <div className='form-title'>
+                {this.formTitle()}
+              </div>
+              <div>
+                {this.renderErrors()}
+              </div>
+              <label> User Name:
+                <br/>
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}/>
+              </label>
+              <br/>
+              <label> Password:
+                <br/>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}/>
+              </label>
+              {
+                this.addNewUserFields()
+              }
+              <br/>
+              <input type="submit" value={this.buttonText()} />
+              { this.switchFormsPart() }
+            </form>
+          </div>
+          <div className='img-container'>
+            <img className="truckpic" src={window.halal_truck_pic} />
+          </div>
         </div>
       </div>
     );
