@@ -2,6 +2,7 @@
   window.halal_truck_pic = "<%= asset_path('halal_truck_pic.png') %>"
   window.halalhubLogo = "<%= asset_path('halalhub-logo.png') %>"
   window.halalhubsvg = "<%= asset_path('halalhub-logo.svg') %>"
+  window.optimisedsvg = "<%= asset_path('optimised.svg') %>"
   <% if logged_in? %>
     window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
   <% end %>

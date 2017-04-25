@@ -7,6 +7,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import TruckFormContainer from './truck_form/truck_form_container';
 import TruckListContainer from './trucklist/trucklist_container';
+import IndexPage from './pages/index_page';
 
 
 const Root = ({ store }) => {
@@ -29,7 +30,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={hashHistory} >
         <Route path="/" component={App}>
-          <IndexRoute component={NavbarContainer} />
+          <IndexRoute component={IndexPage} />
           <Route path="/trucks" component={TruckListContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />

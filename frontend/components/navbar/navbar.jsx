@@ -34,7 +34,7 @@ const personalGreeting = (currentUser, logout, router) => {
 const navbarLeft = () => (
   <div className="navbar-left">
     <Link to="/">
-      <img src={window.halalhubsvg} />
+      <img src={window.optimisedsvg} />
     </Link>
     <form>
       <input type="search" placeholder="Search"/>

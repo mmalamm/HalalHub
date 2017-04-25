@@ -10,7 +10,13 @@ class TruckListItem extends React.Component {
     const { truck } = this.props;
     return(
       <li>
-        {truck.name}
+        <div className="trucklist_item">
+          {truck.name}
+          <br />
+          {truck.street_address}
+          <br />
+          {truck.city}, NY {truck.zip_code}
+        </div>
       </li>
     );
   }
