@@ -1,11 +1,23 @@
+.trucklist {
+  float:right;
+  font-size: 14px;
+}
+
 .trucklist_item {
   margin: 5px;
   padding: 10px;
-  width: 300px;
+  // width: 30vw;
   background-color: #ce1f20;
   color: white;
-  line-height: 1.3;
-  border-bottom: 2px solid #ccc;
+  line-height: 1.4;
+  border-bottom: 2px solid #A8191A;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.trucklist:last-child {
+  border-top: 2px solid #A8191A;
 }
 
 .trucklist_item:hover {
@@ -15,4 +27,14 @@
 
 .trucklist_item:active {
   background-color: #660000;
+}
+
+.trucklist_item_icon {
+  border: 2px solid blue;
+  margin-right: 10px;
+  display: block;
+  max-height: 90px;
+  max-width: 90px;
+  width: auto;
+  height: auto;
 }

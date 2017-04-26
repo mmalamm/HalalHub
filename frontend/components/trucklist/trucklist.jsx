@@ -16,7 +16,7 @@ class TruckList extends React.Component {
     );
 
     return(
-      <div>
+      <div className="trucklist">
         <ul>
           { truckItems }
         </ul>

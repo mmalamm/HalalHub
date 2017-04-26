@@ -13,6 +13,14 @@ class TruckShowPage extends React.Component {
   render() {
     const { truck } = this.props;
 
+    const truckReviews = truck.reviews.map(review => {
+      return (
+        <div>
+          {review.body}
+        </div>
+      );
+    });
+
     const truckOrSpinner = () => {
       if (truck) {
         return (
@@ -38,16 +46,16 @@ class TruckShowPage extends React.Component {
                 <h2>images component will go here</h2>
               </section>
               <section className="show-truck-reviews">
-                <h2>reviews will go here</h2>
+                { truckReviews }
               </section>
               <section className="show-truck-hours">
                 <h2>hours component will go here</h2>
               </section>
             </div>
           </div>
-        )
+        );
       } else {
-        return (<div><h1>WAIT</h1></div>)
+        return (<div><h1>WAIT</h1></div>);
       }
     };
 

@@ -1,6 +1,8 @@
 class Api::TrucksController < ApplicationController
   def index
-    @trucks = Truck.all
+    trucks = Truck.all
+    @trucks = trucks.includes(:reviews)
+    render :index
   end
 
   def show

@@ -12,15 +12,16 @@ class TruckListItem extends React.Component {
     return(
       <li>
         <Link to={`/trucks/${truck.id}`}>
-          <div
-          className="trucklist_item">
-          {truck.name}
-          <br />
-          {truck.street_address}
-          <br />
-          {truck.city}, NY {truck.zip_code}
-          <br />
-          <img src={truck.image_url} />
+          <div className="trucklist_item">
+            <img className="trucklist_item_icon" src={truck.image_url} />
+            <div className="trucklist_item_info">
+              {truck.name}
+                <br />
+              {truck.street_address}
+                <br />
+              {truck.city}, NY {truck.zip_code}
+                <br />
+            </div>
           </div>
         </Link>
       </li>

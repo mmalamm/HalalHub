@@ -6,7 +6,11 @@ class User < ApplicationRecord
   after_initialize :ensure_token
   before_validation :ensure_token_unique
 
-  # db associations
+  has_many :reviews,
+    class_name: "Review",
+    foreign_key: :user_id,
+    primary_key: :id
+
 
   attr_reader :password
 
