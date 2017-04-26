@@ -39,6 +39,6 @@ class Api::TrucksController < ApplicationController
 
   def truck_params
     params.require(:truck)
-          .permit(:name, :street_address, :zip_code, :city, :phone)
+          .permit(:name, :street_address, :zip_code, :city, :phone, :accept_cc, :accept_phone_orders, :delivers)
   end
 end

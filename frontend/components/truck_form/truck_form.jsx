@@ -10,7 +10,10 @@ class TruckForm extends React.Component {
       street_address: '',
       zip_code: 10001,
       city: '',
-      phone: null
+      phone: null,
+      accept_cc: false,
+      accept_phone_orders: false,
+      delivers: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +30,7 @@ class TruckForm extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div>
         <header className="form-header">
@@ -93,6 +97,45 @@ class TruckForm extends React.Component {
               />
           </label>
           <br />
+
+
+          <label>Picture:
+            <br />
+            <input
+              ref="profile_pic"
+
+              placeholder="Upload Profile Pic"
+              onChange={ this.update('profile_pic') }
+              />
+          </label>
+          <br />
+
+          <div className="filter-options">
+            <label>Accepts Phone Orders?
+              <br />
+              <button>Yes</button>
+              <button>No</button>
+              {this.state.accept_phone_orders ? "Yes" : "No"}
+            </label>
+            <br />
+
+            <label>Accepts Credit Cards?
+              <br />
+              <button>Yes</button>
+              <button>No</button>
+              {this.state.accept_cc ? "Yes" : "No"}
+            </label>
+            <br />
+
+            <label>Delivers?
+              <br />
+              <button>Yes</button>
+              <button>No</button>
+              {this.state.delivers ? "Yes" : "No"}
+            </label>
+            <br />
+          </div>
+
           <input type="submit" value="Add Truck!"/>
         </form>
       </div>

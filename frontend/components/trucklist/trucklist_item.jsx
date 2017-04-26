@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import _ from 'lodash';
 
 class TruckListItem extends React.Component {
   constructor(props) {
@@ -21,6 +22,13 @@ class TruckListItem extends React.Component {
                 <br />
               {truck.city}, NY {truck.zip_code}
                 <br />
+              <span className="stars">
+                {_.mean(truck.reviews.map( review => review.rating )) || 1}
+              </span>
+                &nbsp;
+              <span className="num-reviews">
+                {truck.reviews.length} Reviews
+              </span>
             </div>
           </div>
         </Link>

@@ -63,7 +63,7 @@ class TruckShowPage extends React.Component {
                 <h1>
                   {truck.name}
                 </h1>
-                <p>{_.mean(truck.reviews.map( review => review.rating ))}</p>
+                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )) || 1}</p>
               </div>
               <div>
                 <button className="write-review-btn">★ Write a Review</button>
@@ -88,6 +88,19 @@ class TruckShowPage extends React.Component {
                       {truck.city}, NY {truck.zip_code}
                     </div>
                   </div>
+                  <div className="filters">
+                    <i className="fa fa-info-circle" aria-hidden="true"></i>
+                    <div>
+                      Accepts Credit Card?&nbsp;
+                      <strong>{ truck.accept_cc ? "Yes" : "No" }</strong>
+                      <br />
+                      Accepts Phone Orders?&nbsp;
+                      <strong>{ truck.accept_phone_orders ? "Yes" : "No" }</strong>
+                      <br />
+                      Delivers?&nbsp;
+                      <strong>{ truck.delivers ? "Yes" : "No" }</strong>
+                    </div>
+                  </div>
                 </div>
               </summary>
 
@@ -96,9 +109,9 @@ class TruckShowPage extends React.Component {
                 <section className="show-truck-images">
                   Images component will go here.
                 </section>
+                <TruckReviewForm />
                 <section className="show-truck-reviews">
                   { truckReviews() }
-                  <TruckReviewForm />
                 </section>
               </section>
 

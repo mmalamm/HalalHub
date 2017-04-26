@@ -10,7 +10,6 @@ const ReviewsReducer = (state = { reviews: [] }, action) => {
       const collection = state.reviews;
       collection.push(review);
       newState.reviews = collection;
-      debugger
       return newState;
     default:
       return state;

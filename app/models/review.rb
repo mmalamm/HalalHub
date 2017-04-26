@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   validates :user_id, :truck_id, presence: true
-  validates :body, length:{ minimum: 25 }
+  validates :body, length:{ minimum: 5 }
 
   belongs_to :truck,
     class_name: "Truck",

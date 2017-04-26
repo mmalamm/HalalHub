@@ -49,6 +49,7 @@
 
 .show-truck-content {
   width: 92vw;
+  height: 92vh;
   margin: auto;
   display: flex;
 }
@@ -60,6 +61,7 @@ strong {
 .show-truck-info {
   min-width: 400px;
   width: 29vw;
+  height: 75vh;
   background-color: #F5F5F5;
   padding: 5px;
 
@@ -70,6 +72,7 @@ strong {
 .truck-contributions {
   display: block;
   width: 100vw;
+  height: 40vh;
 }
 
 .show-truck-images {
@@ -78,6 +81,8 @@ strong {
 }
 
 .show-truck-reviews {
+  margin-top: 5px;
+  margin-left: 5px;
   padding: 20px;
 }
 
@@ -88,4 +93,22 @@ strong {
 
 .show-truck-info i {
   color: #999999;
+}
+
+.address, .filters {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.address i, .filters i {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.address strong {
+  font-size: 18px;
+}
+
+.address div, .filters div {
+  margin: 10px;
 }

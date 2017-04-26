@@ -1,0 +1,34 @@
+.review-form {
+  margin-top: 5px;
+  margin-left: 5px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background: blue;
+  padding: 15px;
+
+}
+
+.review-form button {
+  width: 20px;
+  margin: 1px;
+}
+
+.review-form button:active {
+  // color: yellow;
+}
+
+.review-form input[type="submit"] {
+  width: 200px;
+}
+
+.body-txtarea {
+  padding-bottom: 10px;
+}
+
+.body-txtarea textarea {
+  margin: 5px 0px;
+  background: white;
+  padding: 5px;
+  width: 96%;
+  border-radius: 5px;
+}

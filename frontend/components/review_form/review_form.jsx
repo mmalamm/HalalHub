@@ -18,10 +18,10 @@ class TruckReviewForm extends React.Component {
   handleReviewSubmit(e) {
     e.preventDefault();
     const truckId = parseInt(this.props.params.id);
-    // debugger
     const review = Object.assign({}, this.state, { truck_id: truckId });
     this.props.createReview(review);
     this.navigateToTruckShow();
+    this.setState({ rating: 1, body: ''});
   }
 
   update(property) {
@@ -38,39 +38,35 @@ class TruckReviewForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleReviewSubmit}>
+      <div className="review-form">
+        <form onSubmit={this.handleReviewSubmit}>
 
+          <div className="rating-input">
+            Rating:&nbsp;
+            <button onClick={this.updateRating(1)}>★</button>
+            <button onClick={this.updateRating(2)}>★</button>
+            <button onClick={this.updateRating(3)}>★</button>
+            <button onClick={this.updateRating(4)}>★</button>
+            <button onClick={this.updateRating(5)}>★</button>
+          </div>
 
-          Rating:
-          <button onClick={this.updateRating(1)}>1</button>
-          <button onClick={this.updateRating(2)}>2</button>
-          <button onClick={this.updateRating(3)}>3</button>
-          <button onClick={this.updateRating(4)}>4</button>
-          <button onClick={this.updateRating(5)}>5</button>
-
-
-
-        <br />
-        <label>
-          Your review
           <br />
-          <textarea
-            value={this.state.body}
-            onChange={this.update("body")}
-            placeholder="Your Review Here"></textarea>
-        </label>
 
-        <input type="submit" value="Create Review" />
+          <label className="body-txtarea">
+            Your review
+            <br />
+            <textarea
+              value={this.state.body}
+              onChange={this.update("body")}
+              placeholder="Your Review Here"></textarea>
+          </label>
 
-      </form>
+          <input type="submit" value="Create Review" />
+
+        </form>
+      </div>
     );
   }
 }
 
 export default withRouter(TruckReviewForm);
-
-
-
-
-
-// TRUCK ADDREVIEW FORM (REVIEWschema: body:text, user_id:int, truck_id:int, rating:int)
