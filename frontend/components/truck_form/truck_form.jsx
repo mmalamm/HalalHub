@@ -23,6 +23,13 @@ class TruckForm extends React.Component {
     return e => this.setState({ [property]: e.target.value });
   }
 
+  updateFilter(property, bool) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [property]: bool });
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const truck = Object.assign({}, this.state);
@@ -30,7 +37,6 @@ class TruckForm extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <div>
         <header className="form-header">
@@ -87,17 +93,6 @@ class TruckForm extends React.Component {
               />
           </label>
           <br />
-          <label>Picture:
-            <br />
-            <input
-              ref="profile_pic"
-
-              placeholder="Upload Profile Pic"
-              onChange={ this.update('profile_pic') }
-              />
-          </label>
-          <br />
-
 
           <label>Picture:
             <br />
@@ -113,24 +108,24 @@ class TruckForm extends React.Component {
           <div className="filter-options">
             <label>Accepts Phone Orders?
               <br />
-              <button>Yes</button>
-              <button>No</button>
+              <button onClick={ this.updateFilter("accept_phone_orders", true)}>Yes</button>
+              <button onClick={ this.updateFilter("accept_phone_orders", false)}>No</button>
               {this.state.accept_phone_orders ? "Yes" : "No"}
             </label>
             <br />
 
             <label>Accepts Credit Cards?
               <br />
-              <button>Yes</button>
-              <button>No</button>
+              <button onClick={ this.updateFilter("accept_cc", true)}>Yes</button>
+              <button onClick={ this.updateFilter("accept_cc", false)}>No</button>
               {this.state.accept_cc ? "Yes" : "No"}
             </label>
             <br />
 
             <label>Delivers?
               <br />
-              <button>Yes</button>
-              <button>No</button>
+                <button onClick={ this.updateFilter("delivers", true)}>Yes</button>
+                <button onClick={ this.updateFilter("delivers", false)}>No</button>
               {this.state.delivers ? "Yes" : "No"}
             </label>
             <br />
