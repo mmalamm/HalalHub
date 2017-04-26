@@ -10,40 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425214742) do
+ActiveRecord::Schema.define(version: 20170426203505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "rating_num", null: false
-    t.integer  "truck_id",   null: false
-    t.integer  "user_id",    null: false
-    t.integer  "review_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
-    t.text     "body",       null: false
-    t.integer  "user_id",    null: false
-    t.integer  "truck_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "body",                   null: false
+    t.integer  "user_id",                null: false
+    t.integer  "truck_id",               null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "rating",     default: 3, null: false
   end
 
   create_table "trucks", force: :cascade do |t|
-    t.string   "name",                     null: false
-    t.string   "street_address",           null: false
-    t.integer  "zip_code",                 null: false
-    t.string   "city",                     null: false
+    t.string   "name",                                     null: false
+    t.string   "street_address",                           null: false
+    t.integer  "zip_code",                                 null: false
+    t.string   "city",                                     null: false
     t.string   "phone"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "profile_pic_file_name"
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.boolean  "accept_cc",                default: false
+    t.boolean  "accept_phone_orders",      default: false
+    t.boolean  "delivers",                 default: false
     t.index ["city"], name: "index_trucks_on_city", using: :btree
     t.index ["name"], name: "index_trucks_on_name", using: :btree
     t.index ["street_address"], name: "index_trucks_on_street_address", using: :btree

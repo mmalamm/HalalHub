@@ -33,7 +33,8 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRoute component={IndexPage} />
           <Route path="/trucks" component={TruckListContainer} />
-          <Route path="/trucks/:id" component={TruckShowPageContainer} />
+          <Route path="/trucks/:id" component={TruckShowPageContainer}>
+          </Route>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/addtruck" component={TruckFormContainer} onEnter={_redirectIfNotLoggedIn} />

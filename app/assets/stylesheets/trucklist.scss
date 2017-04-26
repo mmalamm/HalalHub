@@ -7,13 +7,14 @@
   margin: 5px;
   padding: 10px;
   // width: 30vw;
-  background-color: #ce1f20;
+  // background-color: #ce1f20;
   color: white;
   line-height: 1.4;
   border-bottom: 2px solid #A8191A;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background-image: url("bg-flower.svg");
 }
 
 .trucklist:last-child {

@@ -1,40 +1,47 @@
 import React from 'react';
 import Navbar from '../navbar/navbar_container';
+import _ from 'lodash';
+
+///////
+import TruckReviewForm from '../review_form/review_form_container.jsx';
+///////
+
+
 
 class TruckShowPage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      rating: 3,
+      body: ''
+    };
   }
 
   componentDidMount() {
     this.props.fetchTruck(this.props.params.id);
   }
 
+  handleReviewSubmit(e) {
+    e.preventDefault();
+
+
+  }
+
   render() {
     const { truck } = this.props;
 
-    const truckReviewForm = () => {
-      if (truck) {
-        return(
-          <form>
-            <label>
-              Your review
-              <br />
-              <textarea placeholder="Your Review Here"></textarea>
-            </label>
-          </form>
-        )
-      }
-    };
-
+    //// TRUCK REVIEWS (PART OF TRUCK SHOW PAGE)
     const truckReviews = () => {
       if (truck) {
         return(truck.reviews.map(review => {
           return (
             <article key={review.id} className="single-truck-review">
-              <strong>{review.user_id}</strong>
+              <strong>User ID: {review.user_id}</strong>
               <br />
-              {review.body}
+              <strong>Rating:</strong> {review.rating}
+              <br />
+              <strong>Body:</strong> {review.body}
             </article>
           );
         }));
@@ -43,14 +50,21 @@ class TruckShowPage extends React.Component {
       }
     };
 
+    //// TRUCK INFO OR SPINNER ///////
     const truckOrSpinner = () => {
       if (truck) {
         return (
           <div className="show-truck-page">
+
+
             <header className="show-page-header">
-              <h1>
-                {truck.name}
-              </h1>
+              <div>
+
+                <h1>
+                  {truck.name}
+                </h1>
+                <p>{_.mean(truck.reviews.map( review => review.rating ))}</p>
+              </div>
               <div>
                 <button className="write-review-btn">★ Write a Review</button>
                 <button className="add-photo-btn">Add Photo!</button>
@@ -61,6 +75,8 @@ class TruckShowPage extends React.Component {
 
 
             <div className="show-truck-content">
+
+
               <summary className="show-truck-info">
                 <div>
                   <img src={truck.image_url} />
@@ -75,14 +91,17 @@ class TruckShowPage extends React.Component {
                 </div>
               </summary>
 
+
               <section className="truck-contributions">
                 <section className="show-truck-images">
                   Images component will go here.
                 </section>
                 <section className="show-truck-reviews">
                   { truckReviews() }
+                  <TruckReviewForm />
                 </section>
               </section>
+
 
             </div>
 
