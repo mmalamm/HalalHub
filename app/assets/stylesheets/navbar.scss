@@ -5,7 +5,7 @@
   border-radius: 10px;
   align-items: center;
   padding: 0px 10px;
-  margin: 15px auto;
+  margin-top: 15px;
   justify-content: space-between;
   width: calc(93vw);
 }
@@ -56,4 +56,22 @@
   height: auto;
   background-color: #999999;
   border-radius: none;
+}
+
+.address {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.address i {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.address strong {
+  font-size: 18px;
+}
+
+.address div {
+  margin: 10px;
 }

@@ -45,18 +45,12 @@
   width: 100vw;
   height: 100vh;
   background-color: white;
-  // border: 20px solid blue;
 }
 
 .show-truck-content {
   width: 92vw;
   margin: auto;
   display: flex;
-  justify-content: space-between;
-}
-
-.show-truck-content > * {
-  border: 2px solid blue;
 }
 
 strong {
@@ -64,11 +58,34 @@ strong {
 }
 
 .show-truck-info {
+  min-width: 400px;
   width: 29vw;
   background-color: #F5F5F5;
   padding: 5px;
 
 
-  border: 2px solid green;
+  border: 2px solid blue;
+}
 
+.truck-contributions {
+  display: block;
+  width: 100vw;
+}
+
+.show-truck-images {
+  padding: 25px;
+  background: yellow;
+}
+
+.show-truck-reviews {
+  padding: 20px;
+}
+
+.single-truck-review {
+  border: 1px dashed blue;
+  margin-bottom: 20px;
+}
+
+.show-truck-info i {
+  color: #999999;
 }
