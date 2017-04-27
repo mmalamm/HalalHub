@@ -9,17 +9,16 @@ export default class MarkerManager {
   }
 
   updateMarkers(trucks){
-    console.log('time to update');
-    // const trucksObj = {};
-    // trucks.forEach(truck => trucksObj[truck.id] = truck);
-    //
-    // trucks
-    //   .filter(truck => !this.markers[truck.id])
-    //   .forEach(newTruck => this.createMarkerFromTruck(newTruck, this.handleClick));
-    //
-    // Object.keys(this.markers)
-    //   .filter(truckId => !trucksObj[truckId])
-    //   .forEach((truckId) => this.removeMarker(this.markers[truckId]));
+    const trucksObj = {};
+    trucks.forEach(truck => trucksObj[truck.id] = truck);
+
+    trucks
+      .filter(truck => !this.markers[truck.id])
+      .forEach(newTruck => this.createMarkerFromTruck(newTruck, this.handleClick));
+
+    Object.keys(this.markers)
+      .filter(truckId => !trucksObj[truckId])
+      .forEach((truckId) => this.removeMarker(this.markers[truckId]));
   }
 
   createMarkerFromTruck(truck) {

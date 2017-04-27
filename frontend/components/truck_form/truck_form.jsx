@@ -43,16 +43,14 @@ class TruckForm extends React.Component {
         }
       }
     ).then( result => {
-      truck.lat = result.results[0].geometry.location.lat;
-      truck.lng = result.results[0].geometry.location.lng;
-      truck.zip_code = result.results[0].address_components[7].long_name;
-      truck.city = result.results[0].address_components[2].short_name;
+      const comps = result.results[0].address_components;
+      const loc = result.results[0].geometry.location;
+      truck.lat = loc.lat;
+      truck.lng = loc.lng;
+      truck.zip_code = comps[comps.length - 1].long_name;
+      truck.city = comps[2].short_name;
       this.props.createTruck(truck);
     }).then(() => this.props.router.push('/'));
-
-
-
-    // this.props.createTruck(truck).then(() => this.props.router.push('/'));
   }
 
   render() {

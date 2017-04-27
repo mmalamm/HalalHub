@@ -9,8 +9,8 @@ const _getCoordsObj = latLng => ({
 });
 
 let _mapOptions = {
-  center: {lat: 40.745280, lng: -73.993950},
-  zoom: 15
+  center: {lat: 40.7309907, lng: -73.8672127},
+  zoom: 10
 };
 
 class TruckMap extends React.Component {
@@ -43,21 +43,10 @@ class TruckMap extends React.Component {
         southWst: { lat: south, lng: west } };
       // this.props.updateFilter('bounds', bounds);
     });
-    google.maps.event.addListener(this.map, 'click', event => {
-      const coords = _getCoordsObj(event.latLng);
-      this._handleClick(coords);
-    });
   }
 
   _handleMarkerClick(truck) {
     this.props.router.push(`trucks/${truck.id}`);
-  }
-
-  _handleClick(coords) {
-    this.props.router.push({
-      pathname: "trucks/new",
-      query: coords
-    });
   }
 
   render() {

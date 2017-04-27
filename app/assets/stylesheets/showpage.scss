@@ -43,8 +43,7 @@
 .show-page {
   margin: auto;
   width: 100vw;
-  height: 100vh;
-  background-color: white;
+  background-color: #f5f5f5;
 }
 
 .show-truck-content {
@@ -93,6 +92,8 @@ strong {
 
 .show-truck-info i {
   color: #999999;
+  font-size: 30px;
+  padding: 10px;
 }
 
 .show-truck-info img {
@@ -105,10 +106,6 @@ strong {
   justify-content: flex-start;
 }
 
-.address i, .filters i {
-  font-size: 30px;
-  padding: 10px;
-}
 
 .address strong, .filters strong {
   font-size: 18px;

@@ -40,13 +40,14 @@ main {
 }
 
 
+// #map-container {
+//   width: 500px;
+//   height: 500px;
+// }
 #map-container {
-  width: 500px;
-  height: 500px;
-}
-
-.stars {
-  color: yellow;
-  font-weight: bolder;
-  -webkit-text-stroke: 1px #660000;
+  border: 10px solid #660000;
+  margin-top: 10px;
+  margin-right: 15px;
+  width: 600px;
+  height: 600px;
 }

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 
-//////////
-// import { fetchTrucks } from '../../actions/truck_actions';
-//////////
+////////
+import { fetchTrucks } from '../../actions/truck_actions';
+////////
 
 
 import { allTrucks } from '../../reducers/selectors';
@@ -15,9 +15,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  ////////////
-  // requestTrucks: () => dispatch(fetchTrucks())
-  ///////////
+  //////////
+  requestTrucks: () => dispatch(fetchTrucks())
+  /////////
 
 
 });

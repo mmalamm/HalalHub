@@ -10,6 +10,7 @@ class TruckListItem extends React.Component {
 
   render() {
     const { truck } = this.props;
+    const truckRating = _.mean(truck.reviews.map( review => review.rating )) || 0;
     return(
       <li>
         <Link to={`/trucks/${truck.id}`}>
@@ -23,7 +24,7 @@ class TruckListItem extends React.Component {
               {truck.city}, NY {truck.zip_code}
                 <br />
               <span className="stars">
-                {_.mean(truck.reviews.map( review => review.rating )) || 1}
+                {truckRating}
               </span>
                 &nbsp;
               <span className="num-reviews">

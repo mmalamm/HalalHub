@@ -1,12 +1,23 @@
 import React from 'react';
 
-import TruckIndex from './truck_index';
+
 import TruckMap from '../truck_map/truck_map';
+import Navbar from '../navbar/navbar_container';
+import TruckList from '../trucklist/trucklist_container';
 
 const Search = ({ trucks }) => (
   <div>
-    <TruckMap trucks={trucks} />
-    <TruckIndex trucks={trucks} />
+    <header>
+      <Navbar />
+    </header>
+    <div className="search-page">
+      <div className="main-map">
+        <TruckMap trucks={trucks} />
+      </div>
+      <div className="trucklist">
+        <TruckList trucks={trucks} />
+      </div>
+    </div>
   </div>
 );
 
