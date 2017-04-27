@@ -12,6 +12,14 @@
   width: calc(92vw);
 }
 
+.truck-form h1 {
+  font-size: 24px;
+  padding-bottom: 10px;
+  color: #660000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .truck-form input {
   margin-bottom: 15px;
   padding: 5px;
@@ -31,6 +39,11 @@
   border-radius: 5px;
   background-color: #A8191A;
   width: 100px;
+}
+
+.filter-options button {
+  width: 40px;
+  margin-right: 10px;
 }
 
 .truck-form input[type="submit"]:active {

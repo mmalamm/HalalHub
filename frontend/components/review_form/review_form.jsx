@@ -48,6 +48,8 @@ class TruckReviewForm extends React.Component {
             <button onClick={this.updateRating(3)}>★</button>
             <button onClick={this.updateRating(4)}>★</button>
             <button onClick={this.updateRating(5)}>★</button>
+            &nbsp;
+            {this.state.rating}/5
           </div>
 
           <br />

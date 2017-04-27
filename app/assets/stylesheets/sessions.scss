@@ -102,6 +102,11 @@ button:active, input[type="submit"]:active {
   background-color: #660000;
 }
 
+button:hover, input[type="submit"]:hover {
+  // background-color: black;
+  background-image: url("bg-flower-small.svg");
+}
+
 @media (max-width: 700px) {
   .truckpic {
     display: none;

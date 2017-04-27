@@ -27,7 +27,7 @@ class TruckForm extends React.Component {
     return e => {
       e.preventDefault();
       this.setState({ [property]: bool });
-    }
+    };
   }
 
   handleSubmit(e) {
@@ -43,6 +43,7 @@ class TruckForm extends React.Component {
           <Navbar id="form-header"/>
         </header>
         <form className="truck-form" onSubmit={ this.handleSubmit }>
+          <h1>Add New Truck</h1>
           <label>Name:
             <br />
             <input
