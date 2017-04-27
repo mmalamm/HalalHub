@@ -33,7 +33,26 @@ class TruckForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const truck = Object.assign({}, this.state);
-    this.props.createTruck(truck).then(() => this.props.router.push('/'));
+
+
+    $.ajax(
+      { method: 'get',
+        url:'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBLGSUQ5XA6Ao6JhjrlAUG8K0EyL3UZIkI',
+        data: {
+          address: `${truck.street_address} ${truck.city}`
+        }
+      }
+    ).then( result => {
+      truck.lat = result.results[0].geometry.location.lat;
+      truck.lng = result.results[0].geometry.location.lng;
+      truck.zip_code = result.results[0].address_components[7].long_name;
+      truck.city = result.results[0].address_components[2].short_name;
+      this.props.createTruck(truck);
+    }).then(() => this.props.router.push('/'));
+
+
+
+    // this.props.createTruck(truck).then(() => this.props.router.push('/'));
   }
 
   render() {
@@ -64,25 +83,17 @@ class TruckForm extends React.Component {
               />
           </label>
           <br />
-          <label>City:
+          <label>Boro:
             <br />
             <input
               ref="city"
               value={ this.state.city }
-              placeholder="Enter truck city"
+              placeholder="Enter truck boro"
               onChange={ this.update('city') }
               />
           </label>
           <br />
-          <label>Zip Code:
-            <br />
-            <input
-              ref="zip_code"
-              value={ this.state.zip_code }
-              placeholder="Enter zip code"
-              onChange={ this.update('zip_code') }
-              />
-          </label>
+
           <br />
           <label>Phone:
             <br />
@@ -106,31 +117,31 @@ class TruckForm extends React.Component {
           </label>
           <br />
 
-          <div className="filter-options">
-            <label>Accepts Phone Orders?
-              <br />
-              <button onClick={ this.updateFilter("accept_phone_orders", true)}>Yes</button>
-              <button onClick={ this.updateFilter("accept_phone_orders", false)}>No</button>
-              {this.state.accept_phone_orders ? "Yes" : "No"}
-            </label>
-            <br />
+            <div className="filter-options">
+              Accepts Phone Orders?
+                <br />
+                <button onClick={ this.updateFilter("accept_phone_orders", true)}>Yes</button>
+                <button onClick={ this.updateFilter("accept_phone_orders", false)}>No</button>
+                {this.state.accept_phone_orders ? "Yes" : "No"}
 
-            <label>Accepts Credit Cards?
               <br />
-              <button onClick={ this.updateFilter("accept_cc", true)}>Yes</button>
-              <button onClick={ this.updateFilter("accept_cc", false)}>No</button>
-              {this.state.accept_cc ? "Yes" : "No"}
-            </label>
-            <br />
 
-            <label>Delivers?
+              Accepts Credit Cards?
+                <br />
+                <button onClick={ this.updateFilter("accept_cc", true)}>Yes</button>
+                <button onClick={ this.updateFilter("accept_cc", false)}>No</button>
+                {this.state.accept_cc ? "Yes" : "No"}
+
               <br />
-                <button onClick={ this.updateFilter("delivers", true)}>Yes</button>
-                <button onClick={ this.updateFilter("delivers", false)}>No</button>
-              {this.state.delivers ? "Yes" : "No"}
-            </label>
-            <br />
-          </div>
+
+              Delivers?
+                <br />
+                  <button onClick={ this.updateFilter("delivers", true)}>Yes</button>
+                  <button onClick={ this.updateFilter("delivers", false)}>No</button>
+                {this.state.delivers ? "Yes" : "No"}
+
+              <br />
+            </div>
 
           <input type="submit" value="Add Truck!"/>
         </form>

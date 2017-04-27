@@ -11,6 +11,9 @@ import IndexPage from './pages/index_page';
 import TruckShowPageContainer from './pages/truck_show_page_container';
 
 
+import SearchContainer from './search/search_container';
+
+
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -32,7 +35,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory} >
         <Route path="/" component={App}>
           <IndexRoute component={IndexPage} />
-          <Route path="/trucks" component={TruckListContainer} />
+          <Route path="/trucks" component={SearchContainer} />
           <Route path="/trucks/:id" component={TruckShowPageContainer}>
           </Route>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />

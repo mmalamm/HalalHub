@@ -95,6 +95,11 @@ strong {
   color: #999999;
 }
 
+.show-truck-info img {
+  margin: auto;
+  border: 1px solid green;
+}
+
 .address, .filters {
   display: flex;
   justify-content: flex-start;

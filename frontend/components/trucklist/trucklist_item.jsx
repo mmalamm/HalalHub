@@ -16,7 +16,7 @@ class TruckListItem extends React.Component {
           <div className="trucklist_item">
             <img className="trucklist_item_icon" src={truck.image_url} />
             <div className="trucklist_item_info">
-              {truck.name}
+              <strong>{truck.name}</strong>
                 <br />
               {truck.street_address}
                 <br />

@@ -33,10 +33,13 @@
 .trucklist_item_icon {
   margin-right: 10px;
   display: block;
-  max-height: 90px;
-  max-width: 90px;
-  width: auto;
-  height: auto;
+  border: 2px solid black;
+  height: 90px;
+  width: 90px;
+  // max-height: 90px;
+  // max-width: 90px;
+  // width: auto;
+  // height: auto;
 }
 
 .num-reviews {

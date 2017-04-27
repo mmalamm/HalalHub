@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426203505) do
+ActiveRecord::Schema.define(version: 20170427154226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20170426203505) do
     t.boolean  "accept_cc",                default: false
     t.boolean  "accept_phone_orders",      default: false
     t.boolean  "delivers",                 default: false
+    t.float    "lat"
+    t.float    "lng"
     t.index ["city"], name: "index_trucks_on_city", using: :btree
     t.index ["name"], name: "index_trucks_on_name", using: :btree
     t.index ["street_address"], name: "index_trucks_on_street_address", using: :btree

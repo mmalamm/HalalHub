@@ -49,3 +49,15 @@
 .truck-form input[type="submit"]:active {
   background-color: #660000;
 }
+
+.filters-latlng {
+  display:flex;
+}
+
+.lat-lng {
+  margin-left: 15px;
+}
+
+.lat-lng input {
+  width: auto;
+}
