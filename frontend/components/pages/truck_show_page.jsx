@@ -37,11 +37,9 @@ class TruckShowPage extends React.Component {
         return(truck.reviews.map(review => {
           return (
             <article key={review.id} className="single-truck-review">
-              <strong>User ID: {review.user_id}</strong>
-              <br />
               <strong>Rating:</strong> {review.rating}
               <br />
-              <strong>Body:</strong> {review.body}
+              <strong>{review.username} said</strong> {review.body}
             </article>
           );
         }));
@@ -91,6 +89,8 @@ class TruckShowPage extends React.Component {
                   <div className="filters">
                     <i className="fa fa-info-circle" aria-hidden="true"></i>
                     <div>
+                      <strong>More Truck Info</strong>
+                      <br />
                       Accepts Credit Card?&nbsp;
                       <strong>{ truck.accept_cc ? "Yes" : "No" }</strong>
                       <br />
