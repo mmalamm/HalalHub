@@ -11,4 +11,11 @@ class Truck < ApplicationRecord
     foreign_key: :truck_id,
     primary_key: :id
 
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds["northEast"][:lat])
+    .where("lng < ?", bounds["northEast"][:lng])
+        .where("lat > ?", bounds["southWst"][:lat])
+        .where("lng > ?", bounds["southWst"][:lng])
+  end
+
 end

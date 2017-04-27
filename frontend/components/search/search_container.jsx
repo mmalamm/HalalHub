@@ -1,12 +1,7 @@
 import { connect } from 'react-redux';
 
-
-////////
-import { fetchTrucks } from '../../actions/truck_actions';
-////////
-
-
 import { allTrucks } from '../../reducers/selectors';
+import { updateFilter } from '../../actions/filter_actions';
 
 import Search from './search';
 
@@ -15,11 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  //////////
-  requestTrucks: () => dispatch(fetchTrucks())
-  /////////
-
-
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

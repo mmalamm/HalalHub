@@ -41,7 +41,7 @@ class TruckMap extends React.Component {
       const bounds = {
         northEast: { lat:north, lng: east },
         southWst: { lat: south, lng: west } };
-      // this.props.updateFilter('bounds', bounds);
+      this.props.updateFilter('bounds', bounds);
     });
   }
 

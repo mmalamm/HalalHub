@@ -41,7 +41,8 @@
 }
 
 .navbar-left input {
-  padding: 1px;
+  padding: 3px;
+  padding-left: 9px;
   margin: 0px 10px;
   margin-right: 0px;
   height: 25px;
@@ -54,6 +55,8 @@
   margin-left: 0px;
   width: auto;
   height: auto;
-  background-color: #999999;
+  font-size: 20px;
+  color: black;
+  background-color: #f5f5f5;
   border-radius: none;
 }

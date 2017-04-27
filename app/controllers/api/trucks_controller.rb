@@ -1,6 +1,7 @@
 class Api::TrucksController < ApplicationController
   def index
-    trucks = Truck.all
+    trucks = bounds ? Truck.in_bounds(bounds) : Truck.all
+
     @trucks = trucks.includes(:reviews)
     render :index
   end
@@ -11,7 +12,7 @@ class Api::TrucksController < ApplicationController
 
   def create
     @truck = Truck.new(truck_params)
-    
+
     if @truck.save
       render :show
     else
@@ -35,10 +36,14 @@ class Api::TrucksController < ApplicationController
     render json: @truck
   end
 
+  def bounds
+    params[:bounds]
+  end
   private
 
   def truck_params
     params.require(:truck)
           .permit(:name, :street_address, :zip_code, :lat, :lng, :city, :phone, :accept_cc, :accept_phone_orders, :delivers)
   end
+
 end

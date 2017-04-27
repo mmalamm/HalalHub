@@ -1,7 +1,8 @@
-export const fetchTrucks = () => {
+export const fetchTrucks = (data) => {
   return $.ajax({
     method: 'GET',
     url: 'api/trucks',
+    data
   });
 };
 
