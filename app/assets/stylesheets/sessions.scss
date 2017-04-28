@@ -104,7 +104,7 @@ button:active, input[type="submit"]:active {
 
 button:hover, input[type="submit"]:hover {
   // background-color: black;
-  background-image: asset-path("bg-flower-small.svg");
+  background-image: image-url("bg-flower-small.svg");
 }
 
 @media (max-width: 700px) {
