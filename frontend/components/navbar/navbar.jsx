@@ -1,6 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
+const navbarLeft = () => (
+  <div className="navbar-left">
+    <Link to="/">
+      <img src={window.optimisedsvg} />
+    </Link>
+    <form>
+      <input type="search" placeholder="Search"/>
+      <button>
+        <i className="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+)
+
 const sessionLinks = () => (
   <nav className="navbar">
     {navbarLeft()}
@@ -31,19 +46,6 @@ const personalGreeting = (currentUser, logout, router) => {
   </hgroup>)
 };
 
-const navbarLeft = () => (
-  <div className="navbar-left">
-    <Link to="/">
-      <img src={window.optimisedsvg} />
-    </Link>
-    <form>
-      <input type="search" placeholder="Search"/>
-      <button>
-        <i className="fa fa-search" aria-hidden="true"></i>
-      </button>
-    </form>
-  </div>
-)
 
 
 const Navbar = ({ currentUser, logout, router }) => (

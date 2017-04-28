@@ -43,6 +43,7 @@
 .show-page {
   margin: auto;
   width: 100vw;
+  height: 100vh;
   background-color: #f5f5f5;
 }
 
@@ -88,6 +89,12 @@ strong {
 .single-truck-review {
   border: 1px dashed blue;
   margin-bottom: 20px;
+}
+
+.single-truck-review img {
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
 }
 
 .show-truck-info i {

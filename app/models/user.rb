@@ -6,6 +6,9 @@ class User < ApplicationRecord
   after_initialize :ensure_token
   before_validation :ensure_token_unique
 
+  has_attached_file :avatar, default_url: "default_user.svg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   has_many :reviews,
     class_name: "Review",
     foreign_key: :user_id,

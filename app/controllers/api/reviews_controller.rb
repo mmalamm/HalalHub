@@ -22,8 +22,12 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:review_id]) ###
-    @review.destroy
-    render json: @review
+    if @review.user_id == current_user.id
+      @review.destroy
+      render json: @review
+    else
+      render json: ["You don't have permission to delete this."]
+    end
   end
 
   private

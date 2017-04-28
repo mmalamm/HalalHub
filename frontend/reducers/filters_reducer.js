@@ -3,6 +3,9 @@ import merge from 'lodash/merge';
 
 const _defaultFilters = Object.freeze({
   bounds: {},
+  accept_cc: false,
+  accept_phone_orders: false,
+  delivers: false
 });
 
 const FiltersReducer = (state = _defaultFilters, action) => {

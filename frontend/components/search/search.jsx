@@ -23,7 +23,6 @@ const Search = ({ trucks, updateFilter }) => (
         <TruckList trucks={trucks} />
       </div>
     </div>
-    <TruckIndex trucks={trucks} />
   </div>
 );
 
