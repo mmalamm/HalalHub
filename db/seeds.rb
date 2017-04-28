@@ -9,6 +9,7 @@
 
 Truck.delete_all
 User.delete_all
+Review.delete_all
 # Truck schema:
 #
 
@@ -337,6 +338,7 @@ trucks = trucksObj.values
 Truck.create(trucks)
 
 Truck.all.each.with_index do |truck, idx|
+  truck.description = Faker::Hipster.paragraph
   parth = "app/assets/images/truck_profile_pics/images-#{idx + 1}.jpg"
   truck.profile_pic= File.open(parth)
   truck.save!
@@ -345,7 +347,7 @@ end
 
 userIds = User.all.map{ |user| user.id }
 truckIds = Truck.all.map{ |truck| truck.id }
-ratings = [3,4,5]
+ratings = [1,2,2,3,3,4,4,4,4,4,5,5,5]
 
 150.times do
   Review.create({
