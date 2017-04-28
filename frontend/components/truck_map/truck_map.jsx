@@ -8,16 +8,16 @@ const _getCoordsObj = latLng => ({
   lng: latLng.lng()
 });
 
-let _mapOptions = {
-  center: {lat: 40.7309907, lng: -73.8672127},
-  zoom: 10
-};
+// let _mapOptions = {
+//   center: {lat: 40.7309907, lng: -73.8672127},
+//   zoom: 10
+// };
 
 class TruckMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
-    this.map = new google.maps.Map(map, this.props.mapOptions || _mapOptions);
+    this.map = new google.maps.Map(map, this.props.mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     if (this.props.singleTruck) {
       this.props.fetchTruck(this.props.truckId);
@@ -35,6 +35,13 @@ class TruckMap extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    // debugger
+    if (this.props.mapOptions.center.lat !== newProps.mapOptions.center.lat || this.props.mapOptions.center.lng !== newProps.mapOptions.center.lng) {
+      this.map.panTo(newProps.mapOptions.center);
+      this.map.setZoom(newProps.mapOptions.zoom);
+    }
+  }
   _registerListeners() {
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();

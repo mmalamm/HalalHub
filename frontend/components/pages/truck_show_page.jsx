@@ -22,10 +22,9 @@ class TruckShowPage extends React.Component {
     this.props.fetchTruck(this.props.params.id);
   }
 
-  handleReviewSubmit(e) {
+  handleSearchSubmit(e) {
     e.preventDefault();
-
-
+    // ### redirect to indexpage with the e's currentTarget.firstChild.value producing mapOptions via ajax request and then push those props to the indexpage components
   }
 
   render() {
@@ -56,11 +55,8 @@ class TruckShowPage extends React.Component {
       if (truck) {
         return (
           <div className="show-truck-page">
-
-
             <header className="show-page-header">
               <div>
-
                 <h1>
                   {truck.name}
                 </h1>
@@ -72,11 +68,7 @@ class TruckShowPage extends React.Component {
               </div>
             </header>
 
-
-
-
             <div className="show-truck-content">
-
 
               <summary className="show-truck-info">
                 <div>
@@ -104,9 +96,16 @@ class TruckShowPage extends React.Component {
                       <strong>{ truck.delivers ? "Yes" : "No" }</strong>
                     </div>
                   </div>
+                  <div className="filters">
+                    <i className="fa fa-cutlery" aria-hidden="true"></i>
+                    <div>
+                      <strong>Description: </strong>
+                      <br />
+                      { truck.description }
+                    </div>
+                  </div>
                 </div>
               </summary>
-
 
               <section className="truck-contributions">
                 <section className="show-truck-images">
@@ -118,11 +117,7 @@ class TruckShowPage extends React.Component {
                 </section>
               </section>
 
-
             </div>
-
-
-
 
           </div>
         );
@@ -134,7 +129,7 @@ class TruckShowPage extends React.Component {
     return (
       <div className="show-page">
         <header>
-          <Navbar />
+          <Navbar handleSearchSubmit={this.handleSearchSubmit}/>
         </header>
         { truckOrSpinner() }
       </div>

@@ -4,33 +4,33 @@ import { Link } from 'react-router';
 import TruckMap from '../truck_map/truck_map';
 
 
-const handleSearchSubmit = (e) => {
-  e.preventDefault();
-  let addressString = e.currentTarget.firstChild.value;
-  let mapCtrParams = {
-    center: { lat: 40.7309907, lng: -73.8672127 },
-    zoom: 21
-  }
-  debugger
-  $.ajax(
-    { method: 'get',
-      url:'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBLGSUQ5XA6Ao6JhjrlAUG8K0EyL3UZIkI',
-      data: {
-        address: addressString
-      }
-    }
-  ).then( result => {
-    mapCtrParams.center.lat = result.results[0].geometry.location.lat;
-    mapCtrParams.center.lng = result.results[0].geometry.location.lng;
-    debugger
-    return(
-      <TruckMap mapOptions={mapCtrParams} />
-    )
-  })
-}
+// const handleSearchSubmit = (e) => {
+//   e.preventDefault();
+//   let addressString = e.currentTarget.firstChild.value;
+//   let mapCtrParams = {
+//     center: { lat: 40.7309907, lng: -73.8672127 },
+//     zoom: 21
+//   }
+//   debugger
+//   $.ajax(
+//     { method: 'get',
+//       url:'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBLGSUQ5XA6Ao6JhjrlAUG8K0EyL3UZIkI',
+//       data: {
+//         address: addressString
+//       }
+//     }
+//   ).then( result => {
+//     mapCtrParams.center.lat = result.results[0].geometry.location.lat;
+//     mapCtrParams.center.lng = result.results[0].geometry.location.lng;
+//     debugger
+//     return(
+//       <TruckMap mapOptions={mapCtrParams} />
+//     )
+//   })
+// }
 
 
-const navbarLeft = () => (
+const navbarLeft = (handleSearchSubmit) => (
   <div className="navbar-left">
     <Link to="/">
       <img src={window.optimisedsvg} />
@@ -55,14 +55,14 @@ const sessionLinks = () => (
 );
 
 
-const personalGreeting = (currentUser, logout, router) => {
+const personalGreeting = (currentUser, logout, handleSearchSubmit) => {
   const handleLogout = () => {
     logout();
     router.push('/login');
   };
   return(<hgroup>
     <nav className="navbar">
-      {navbarLeft()}
+      {navbarLeft(handleSearchSubmit)}
       <div className="navbar-right">
         <h2>
           Welcome to HalalHub, {currentUser.username}!
@@ -75,8 +75,10 @@ const personalGreeting = (currentUser, logout, router) => {
 
 
 
-const Navbar = ({ currentUser, logout, router }) => (
-  currentUser ? personalGreeting(currentUser, logout, router) : sessionLinks()
+const Navbar = ({ currentUser, logout, handleSearchSubmit }) => {
+  return (
+  currentUser ? personalGreeting(currentUser, logout, handleSearchSubmit) : sessionLinks()
 );
+}
 
 export default Navbar;

@@ -13,7 +13,8 @@ class TruckForm extends React.Component {
       phone: null,
       accept_cc: false,
       accept_phone_orders: false,
-      delivers: false
+      delivers: false,
+      description: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,6 +46,7 @@ class TruckForm extends React.Component {
     ).then( result => {
       const comps = result.results[0].address_components;
       const loc = result.results[0].geometry.location;
+      debugger
       truck.lat = loc.lat;
       truck.lng = loc.lng;
       truck.zip_code = comps[comps.length - 1].long_name;
@@ -103,6 +105,17 @@ class TruckForm extends React.Component {
               />
           </label>
           <br />
+
+              <label>Description:
+                <br />
+                <input
+                  ref="description"
+                  value={ this.state.description || '' }
+                  placeholder="Enter description (e.g. Turkish Style Halal food served here, etc.)"
+                  onChange={ this.update('description') }
+                  />
+              </label>
+              <br />
 
           <label>Picture:
             <br />
