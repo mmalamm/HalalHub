@@ -38,9 +38,11 @@ class TruckShowPage extends React.Component {
           return (
             <article key={review.id} className="single-truck-review">
               <img src={review.image_url}/>
-              <strong>Rating:</strong> {review.rating}
-              <br />
-              <strong>{review.author} said</strong> {review.body}
+              <div>
+                <strong>Rating:</strong> {review.rating}
+                  <br />
+                  <strong><span className="username">{review.author}</span> said</strong> {review.body}
+              </div>
             </article>
           );
         }));
