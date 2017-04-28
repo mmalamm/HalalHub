@@ -17,7 +17,7 @@ class TruckMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
-    this.map = new google.maps.Map(map, _mapOptions);
+    this.map = new google.maps.Map(map, this.props.mapOptions || _mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     if (this.props.singleTruck) {
       this.props.fetchTruck(this.props.truckId);
