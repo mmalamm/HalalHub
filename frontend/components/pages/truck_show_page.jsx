@@ -40,7 +40,7 @@ class TruckShowPage extends React.Component {
               <img src={review.image_url}/>
               <strong>Rating:</strong> {review.rating}
               <br />
-              <strong>{review.username} said</strong> {review.body}
+              <strong>{review.author} said</strong> {review.body}
             </article>
           );
         }));

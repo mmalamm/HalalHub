@@ -2,6 +2,6 @@ json.extract! truck, :id, :name, :street_address, :zip_code, :city, :phone, :acc
 json.image_url asset_path(truck.profile_pic.url)
 json.reviews truck.reviews do |review|
   json.extract! review, :id, :body, :rating
-  json.author_name review.user.username
+  json.author review.user.username
   json.image_url asset_path(review.user.avatar.url)
 end
