@@ -93,6 +93,7 @@ strong {
   margin-bottom: 20px;
   display: flex;
   align-items: flex-start;
+  box-sizing: border-box;
   // justify-content: center;
 }
 
@@ -100,8 +101,12 @@ strong {
   height: 75px;
   width: 75px;
   border: 2px solid black;
-  align-self: center;
-  margin-right: 15px;
+  // align-self: center;
+  // margin-right: 15px;
+}
+
+.single-truck-review div {
+  padding-left: 15px;
 }
 
 .single-truck-review span {

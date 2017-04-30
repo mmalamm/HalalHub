@@ -4,4 +4,5 @@ json.reviews truck.reviews do |review|
   json.extract! review, :id, :body, :rating
   json.author review.user.username
   json.image_url asset_path(review.user.avatar.url)
+  json.timestamp review.updated_at
 end
