@@ -34,7 +34,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={hashHistory} >
         <Route path="/" component={App}>
-          <IndexRoute component={SearchContainer} />
+          <IndexRoute component={SearchContainer} onEnter={_redirectIfNotLoggedIn}/>
           <Route path="/trucks" component={IndexPage} onEnter={_redirectIfNotLoggedIn}/>
           <Route path="/trucks/:id" component={TruckShowPageContainer} onEnter={_redirectIfNotLoggedIn}>
           </Route>

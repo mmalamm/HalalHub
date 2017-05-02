@@ -17,7 +17,7 @@ Review.delete_all
 zip_codes = [10001, 10011, 10018, 10019, 10020, 10036, 10004, 10005, 10006, 10007, 10038, 10280, 11004, 11005, 11411, 11413, 11422, 11426, 11427, 11428, 11429, 11365, 11366, 11367, 12012, 11205, 11215, 11217, 11231, 11220, 11232, 10306, 10307, 10308, 10309, 10312]
 
 24.times do
-  ussr = User.create({
+  User.create({
     username: Faker::Internet.user_name(5..17),
     password: 'password',
     email: Faker::Internet.safe_email,
@@ -29,6 +29,13 @@ User.all.each.with_index do |user, idx|
   user.avatar= File.open("app/assets/images/avatars/images-#{idx + 1}.jpg")
   user.save!
 end
+
+User.create({
+  username: 'billy',
+  password: 'password',
+  email: 'billythekid1890@gmail.com',
+  zip_code: 11377
+})
 
 trucksObj = {
 "18": {

@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.addNewUserFields = this.addNewUserFields.bind(this);
     this.switchFormsPart = this.switchFormsPart.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillMount() {
@@ -74,6 +75,19 @@ class SessionForm extends React.Component {
         </button>
       </nav>
     );
+  }
+
+  demoLogin() {
+    const demoLog = () => {
+      this.props.processForm({username: 'billy', password: 'password'})
+        .then(() => this.props.router.push('/'));
+    }
+
+    if (this.props.formType === 'login') {
+      return(
+        <button className="demo-btn" onClick={demoLog}>DEMO</button>
+      )
+    }
   }
 
   handleSubmit(e) {
@@ -166,6 +180,7 @@ class SessionForm extends React.Component {
               }
               <br/>
               <input type="submit" value={this.buttonText()} />
+              { this.demoLogin() }
               { this.switchFormsPart() }
             </form>
           </div>

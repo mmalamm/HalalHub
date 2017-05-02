@@ -31,7 +31,7 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout, handleSearchSubmit) => {
   const handleLogout = () => {
     logout();
-    router.push('/login');
+    location.reload();
   };
   return(<hgroup>
     <nav className="navbar">

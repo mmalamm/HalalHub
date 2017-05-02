@@ -46,7 +46,6 @@ class TruckForm extends React.Component {
     ).then( result => {
       const comps = result.results[0].address_components;
       const loc = result.results[0].geometry.location;
-      debugger
       truck.lat = loc.lat;
       truck.lng = loc.lng;
       truck.zip_code = comps[comps.length - 1].long_name;

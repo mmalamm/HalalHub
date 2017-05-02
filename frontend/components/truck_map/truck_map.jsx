@@ -36,7 +36,6 @@ class TruckMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // debugger
     if (this.props.mapOptions.center.lat !== newProps.mapOptions.center.lat || this.props.mapOptions.center.lng !== newProps.mapOptions.center.lng) {
       this.map.panTo(newProps.mapOptions.center);
       this.map.setZoom(newProps.mapOptions.zoom);
