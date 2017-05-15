@@ -29,18 +29,19 @@ class TruckShowPage extends React.Component {
 
   render() {
     const { truck } = this.props;
-
     //// TRUCK REVIEWS (PART OF TRUCK SHOW PAGE)
     const truckReviews = () => {
       if (truck) {
         return(truck.reviews.map(review => {
+          let timeStamp = new Date(Date.parse(review.timestamp));
           return (
             <article key={review.id} className="single-truck-review">
-              <img src={review.image_url}/>
+              <img src={review.image_url} />
               <div>
                 <strong>Rating:</strong> {review.rating}
                   <br />
                   <strong><span className="username">{review.author}</span> said</strong> {review.body}
+                  <br /><strong>On {timeStamp.toDateString()+ ' at ' + timeStamp.toLocaleTimeString()}</strong>
               </div>
             </article>
           );
