@@ -1,4 +1,8 @@
 // webpack.config.js
+/// minification warnings
+const webpack = require('webpack');
+const prod = process.argv.indexOf('-p') !== -1;
+///
 var path = require('path');
 
 module.exports = {
@@ -21,5 +25,15 @@ module.exports = {
   devtool: 'source-maps',
   resolve: {
     extensions: ['.js', '.jsx', '*']
-  }
+  },
+  /// minification warnings
+  plugins: [
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production')
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin()
+  ],
+  ///
 };
