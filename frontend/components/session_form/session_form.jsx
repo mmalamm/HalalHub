@@ -80,8 +80,9 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     const demoLog = () => {
       e.preventDefault();
-      this.props.processForm({username: 'billy', password: 'password'})
-        .then(() => this.props.router.push('/'));
+      this.setState({username: 'billy', password: 'password'});
+      let user = this.state;
+      this.props.processForm(user).then(() => this.props.router.push('/'));
     }
 
     if (this.props.formType === 'login') {
@@ -93,7 +94,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
+    let user = this.state;
     this.props.processForm(user).then(() => this.props.router.push('/'));
   }
 
