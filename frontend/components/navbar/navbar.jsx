@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router';
+import { withRouter, Link, hashHistory } from 'react-router';
 
 import TruckMap from '../truck_map/truck_map';
 
@@ -30,7 +30,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout, handleSearchSubmit) => {
   const handleLogout = () => {
-    logout().then(window.location.reload());
+    logout().then(hashHistory.push('/'));
   };
   return(<hgroup>
     <nav className="navbar">
