@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../navbar/navbar_container';
+import NavbarContainer from '../navbar/navbar_container';
 import _ from 'lodash';
 
 ///////
@@ -61,7 +61,7 @@ class TruckShowPage extends React.Component {
                 <h1>
                   {truck.name}
                 </h1>
-                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )) || 1}</p>
+                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )) || 0}</p>
               </div>
               <div>
                 <button className="write-review-btn">★ Write a Review</button>
@@ -130,7 +130,7 @@ class TruckShowPage extends React.Component {
     return (
       <div className="show-page">
         <header>
-          <Navbar handleSearchSubmit={this.handleSearchSubmit}/>
+          <NavbarContainer handleSearchSubmit={this.handleSearchSubmit}/>
         </header>
         { truckOrSpinner() }
       </div>
