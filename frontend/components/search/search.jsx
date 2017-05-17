@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import TruckMap from '../truck_map/truck_map';
-import Navbar from '../navbar/navbar_container';
+import NavbarContainer from '../navbar/navbar_container';
 import TruckList from '../trucklist/trucklist_container';
 
 import TruckIndex from './truck_index';
@@ -48,7 +48,7 @@ class Search extends React.Component{
     return(
   <div>
     <header>
-      <Navbar handleSearchSubmit={this.handleSearchSubmit}/>
+      <NavbarContainer handleSearchSubmit={this.handleSearchSubmit}/>
     </header>
     <div className="search-page">
       <div className="main-map">
