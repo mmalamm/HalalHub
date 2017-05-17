@@ -30,8 +30,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout, handleSearchSubmit) => {
   const handleLogout = () => {
-    logout();
-    window.location.reload();
+    logout().then(window.location.reload());
   };
   return(<hgroup>
     <nav className="navbar">

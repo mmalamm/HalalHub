@@ -5,6 +5,8 @@
   window.optimisedsvg = "<%= asset_path('optimised.svg') %>"
   <% if logged_in? %>
     window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+  <% else %>
+    window.currentUser = null
   <% end %>
 </script>
 <main id="root"></main>
