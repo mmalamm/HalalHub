@@ -61,7 +61,7 @@ class TruckShowPage extends React.Component {
                 <h1>
                   {truck.name}
                 </h1>
-                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )) || 0}</p>
+                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )).toFixed(2) || 0} ★</p>
               </div>
               <div>
                 <button className="write-review-btn">★ Write a Review</button>
