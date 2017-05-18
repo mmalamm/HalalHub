@@ -54,6 +54,8 @@ class TruckShowPage extends React.Component {
     //// TRUCK INFO OR SPINNER ///////
     const truckOrSpinner = () => {
       if (truck) {
+        let truckRating = (_.mean(truck.reviews.map( review => review.rating )));
+        truckRating = isNaN(truckRating) ? 0 : truckRating.toFixed(2);
         return (
           <div className="show-truck-page">
             <header className="show-page-header">
@@ -61,7 +63,7 @@ class TruckShowPage extends React.Component {
                 <h1>
                   {truck.name}
                 </h1>
-                <p className="stars">{_.mean(truck.reviews.map( review => review.rating )).toFixed(2) || 0} ★</p>
+                <p className="stars">★ {truckRating || 'No Reviews Yet'}</p>
               </div>
               <div>
                 <button className="write-review-btn">★ Write a Review</button>
