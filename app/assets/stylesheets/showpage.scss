@@ -86,6 +86,8 @@ strong {
   margin-top: 5px;
   margin-left: 5px;
   padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .single-truck-review {
@@ -95,6 +97,7 @@ strong {
   align-items: flex-start;
   box-sizing: border-box;
   // justify-content: center;
+  flex: 0 0 auto;
 }
 
 .single-truck-review img {

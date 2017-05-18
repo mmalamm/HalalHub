@@ -35,7 +35,7 @@ class TruckShowPage extends React.Component {
         return(truck.reviews.map(review => {
           let timeStamp = new Date(Date.parse(review.timestamp));
           return (
-            <article key={review.id} className="single-truck-review">
+            <li key={review.id} className="single-truck-review">
               <img src={review.image_url} />
               <div>
                 <strong>Rating:</strong> {review.rating}
@@ -43,7 +43,7 @@ class TruckShowPage extends React.Component {
                   <strong><span className="username">{review.author}</span> said</strong> {review.body}
                   <br /><strong>On {timeStamp.toDateString()+ ' at ' + timeStamp.toLocaleTimeString()}</strong>
               </div>
-            </article>
+            </li>
           );
         }));
       } else {
@@ -113,9 +113,9 @@ class TruckShowPage extends React.Component {
                   Images component will go here.
                 </section>
                 <TruckReviewForm />
-                <section className="show-truck-reviews">
+                <ul className="show-truck-reviews">
                   { truckReviews() }
-                </section>
+                </ul>
               </section>
 
             </div>
