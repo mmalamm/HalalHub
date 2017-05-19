@@ -32,7 +32,12 @@ class TruckShowPage extends React.Component {
     //// TRUCK REVIEWS (PART OF TRUCK SHOW PAGE)
     const truckReviews = () => {
       if (truck) {
-        return(truck.reviews.map(review => {
+        let orderedReviews = truck.reviews.sort(
+          (a, b) => {
+            return Date.parse(b.timestamp) - Date.parse(a.timestamp);
+          }
+        );
+        return(orderedReviews.map(review => {
           let timeStamp = new Date(Date.parse(review.timestamp));
           return (
             <li key={review.id} className="single-truck-review">
