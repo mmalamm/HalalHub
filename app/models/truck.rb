@@ -11,6 +11,8 @@ class Truck < ApplicationRecord
     foreign_key: :truck_id,
     primary_key: :id
 
+  # has_many :review_authors, through: :reviews, source: :author
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds["northEast"][:lat])
     .where("lng < ?", bounds["northEast"][:lng])

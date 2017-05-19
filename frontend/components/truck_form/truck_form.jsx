@@ -107,12 +107,12 @@ class TruckForm extends React.Component {
 
               <label>Description:
                 <br />
-                <input
-                  ref="description"
-                  value={ this.state.description || '' }
+                <textarea
                   placeholder="Enter description (e.g. Turkish Style Halal food served here, etc.)"
                   onChange={ this.update('description') }
-                  />
+                  ref="description">
+                  { this.state.description || '' }
+                </textarea>
               </label>
               <br />
 
