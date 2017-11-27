@@ -1,8 +1,7 @@
 export const fetchTrucks = () => {
   return $.ajax({
     method: 'GET',
-    url: 'api/trucks',
-    data
+    url: 'api/trucks'
   });
 };
 
